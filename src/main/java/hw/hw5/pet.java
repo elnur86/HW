@@ -1,11 +1,13 @@
 package hw.hw5;
 
+import java.util.Arrays;
+
 public class pet {
     private String species;
     private String  nickname;
     private int age;
     private int tricklevel;
-    private String[] habit = new String[]{"eat", "drink", "sleep"};;
+    private String[] habit = new String[]{"eat", "drink", "sleep"};
 
 
 
@@ -27,7 +29,7 @@ public class pet {
     public int getTricklevel(){return this.tricklevel;}
 
     public String toString(){
-        return String.format("%s", nickname);
+        return String.format("%s %s", nickname, Arrays.toString(habit));
     }
 }
 

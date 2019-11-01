@@ -9,6 +9,13 @@ public class human
     private human mother;
     private human father;
     private family family;
+    private String[][] schedule = new String[][]{{"Monday", "Do HomeWork for Tuesday"},
+                                                 {"Tuesday","Classes for Tuesday"},
+                                                 {"Wednesday","Do HomeWork for Thursday"},
+                                                 {"Thursday","Classes for Thursday"},
+                                                 {"Friday","Do HomeWork for Saturday"},
+                                                 {"Saturday","Classes for Saturday"},
+                                                 {"Sunday","Relax"}};
 
     human(String name, String surname, int year,int iq)
     {
