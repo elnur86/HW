@@ -15,12 +15,12 @@ public class hw5 {
         f1= new family(h1,h2);
         f1.setPet(p1);
 
-        System.out.println(f1);
+        System.out.println(f1+" count "+f1.countFamily());
         f1.addChild(h3);
-        System.out.println(f1);
+        System.out.println(f1+" count "+f1.countFamily());
         f1.addChild(h4);
-        System.out.println(f1);
+        System.out.println(f1+" count "+f1.countFamily());
         f1.deleteChild(h3);
-        System.out.println(f1);
+        System.out.println(f1+" count "+f1.countFamily());
     }
 }

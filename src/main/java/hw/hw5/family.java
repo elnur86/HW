@@ -27,6 +27,7 @@ public class family {
     public void setPet(pet pet){this.pet=pet;}
     public void addChild(human child){this.children.add(child);}
     public void deleteChild(human child){this.children.remove(child);}
+    public int countFamily(){return 2+this.children.size();}
 
 
     public human[] ArrayListToArray (ArrayList<human> humArl)
