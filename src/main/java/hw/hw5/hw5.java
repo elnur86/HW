@@ -13,7 +13,7 @@ public class hw5 {
         h4=new human("Jony","Fox",1995,50);
 
         f1= new family(h1,h2);
-        f1.setPet(p1);
+        f1.setFamilypet(p1);
 
         System.out.println(f1+" count "+f1.countFamily());
         f1.addChild(h3);

@@ -44,10 +44,31 @@ public class human
         return String.format("%s %s year of birth %d",name,surname,year);
     }
 
-    //    void greetPet(){System.out.printf("Hello, %s",this.pet.getName());}
-//    void describePet(){
+//        void greetPet(){System.out.printf("Hello, %s",this.pet.getName());}
+//        void describePet(){
 //        if (this.pet.getTricklevel()>50) System.out.printf("I have a %s, he is %d years old, he is very sly",this.pet.getSpecies(),this.pet.getAge());
 //        else System.out.printf("I have a %s, he is %d years old, he is almost not sly",this.pet.getSpecies(),this.pet.getAge());}
+
+    @Override
+    public boolean equals (Object that)
+    {
+        if(that==null) return false;
+        if(!(that instanceof human)) return false;
+        if(this==that) return true;
+
+        human thathuman = (human) that;
+
+                if (this.name.equals(((human) that).name)&&
+                    this.surname.equals(((human) that).surname))
+                {return true;}
+                else {return false;}
+
+    }
+
+    @Override
+    public int hashCode(){return 1;}
+
+
 
 }
 
