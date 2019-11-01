@@ -26,6 +26,7 @@ public class family {
     public void setChildren(ArrayList<human> children){this.children = children;}
     public void setPet(pet pet){this.pet=pet;}
     public void addChild(human child){this.children.add(child);}
+    public void deleteChild(human child){this.children.remove(child);}
 
 
     public human[] ArrayListToArray (ArrayList<human> humArl)

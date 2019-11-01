@@ -15,10 +15,12 @@ public class hw5 {
         f1= new family(h1,h2);
         f1.setPet(p1);
 
-        //System.out.println(f1);
+        System.out.println(f1);
         f1.addChild(h3);
+        System.out.println(f1);
         f1.addChild(h4);
- //        f1.addChild(h3);
-         System.out.println(f1);
+        System.out.println(f1);
+        f1.deleteChild(h3);
+        System.out.println(f1);
     }
 }
