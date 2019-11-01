@@ -32,18 +32,3 @@ public class pet {
         return String.format("%s %s", nickname, Arrays.toString(habit));
     }
 }
-
-
-/*
-    Describe the Pet with the following fields:
-        - (`species`)
-        - (`nickname`)
-        - (`age`)
-        - (`trickLevel`) (a whole number from 1 to 100)
-        - (`habits`) (array of strings)
-        - Describe and implement the following methods for Pet:
-        - (`eat`) (method displays a message 'I am eating')
-        - (`respond`) (method displays a message 'Hello, owner. I am - [the name of the pet]. I miss you!')
-        - (`foul`) (method displays a message 'I need to cover it up')
-
-*/
