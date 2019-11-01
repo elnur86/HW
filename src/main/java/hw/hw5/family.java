@@ -6,7 +6,7 @@ import java.util.Arrays;
 public class family {
     private human mother;
     private human father;
-    private ArrayList<human> children;
+    private ArrayList<human> children = new ArrayList<>();
     private pet pet;
 
     family(human father, human mother)
@@ -25,14 +25,15 @@ public class family {
     public void setFather(human father){this.father = father;}
     public void setChildren(ArrayList<human> children){this.children = children;}
     public void setPet(pet pet){this.pet=pet;}
+    public void addChild(human child){this.children.add(child);}
+
 
     public human[] ArrayListToArray (ArrayList<human> humArl)
     {
-        human humAr[]= new human[humArl.size()];
+        int size=humArl.size();
+        human humAr[]= new human[size];
         for (int i=0;i<humArl.size();i++)
-        {
-            humAr[i]=humArl.get(i);
-        }
+            humAr[i] = humArl.get(i);
         return humAr;
     }
 
@@ -42,10 +43,7 @@ public class family {
         return String.format("Father:%s | Mother:%s | Children:%s | Pet: %s",father,mother,Arrays.toString(ArrayListToArray(children)),pet);
     }
 
-    public void addChild(human child)
-    {
-        this.children.add(child);
-    }
+
 }
 
 /*
