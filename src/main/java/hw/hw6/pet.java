@@ -3,7 +3,7 @@ package hw.hw6;
 import java.util.Arrays;
 
 public class pet {
-    private String species;
+    private Species species;
     private String  nickname;
     private int age;
     private int tricklevel;
@@ -11,7 +11,7 @@ public class pet {
 
 
 
-    public pet(String species, String nickname, int age, int tricklevel)
+    public pet(Species species, String nickname, int age, int tricklevel)
     {
         this.species=species;
         this.nickname=nickname;
@@ -25,10 +25,10 @@ public class pet {
 
     public String getName(){return this.nickname;}
     public int getAge(){return this.age;}
-    public String getSpecies(){return this.species;}
+    public Species getSpecies(){return this.species;}
     public int getTricklevel(){return this.tricklevel;}
 
     public String toString(){
-        return String.format("%s %s", nickname, Arrays.toString(habit));
+        return String.format("%s %s %s",species, nickname, Arrays.toString(habit));
     }
 }

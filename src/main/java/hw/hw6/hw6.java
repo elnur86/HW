@@ -6,8 +6,10 @@ public class hw6 {
         family f1,f2;
         pet p1,p2;
         Day day=Day.MONDAY;
+        Species species=Species.DOG;
 
-        p1=new pet("dog","rex",3,64);
+
+        p1=new pet(species,"rex",3,64);
         h1=new human("Tom","Lyn",1980,100);
         h2=new human("Julia","Onail",1983,120);
         h3=new human("Mike","Tot",1990,80);
