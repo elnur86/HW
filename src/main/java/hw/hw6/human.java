@@ -55,4 +55,14 @@ public class human
     }
     @Override
     public int hashCode(){return 1;}
+
+    @Override
+    // finalize method is called on object once
+    // before garbage collecting it
+    protected void finalize() throws Throwable
+    {
+        System.out.println("Garbage collector called to destroy unreachable human class");
+        System.out.println("Object garbage collected : " + this);
+    }
+
 }

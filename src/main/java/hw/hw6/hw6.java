@@ -1,5 +1,7 @@
 package hw.hw6;
 
+import java.awt.*;
+
 public class hw6 {
     public static void main(String[] args) {
         human h1,h2,h3,h4,h5,h6;
@@ -23,10 +25,18 @@ public class hw6 {
         f1.addChild(h3);
         System.out.println(f1+" count "+f1.countFamily());
         f1.addChild(h4);
+        f1.addChild(h4);
+        f1.addChild(h3);
+        f1.addChild(h4);
+        f1.addChild(h4);
+        f1.addChild(h4);
         System.out.println(f1+" count "+f1.countFamily());
-        f1.deleteChild(h3);
+        f1.deleteChild(h5);
+        System.out.println(f1+" count "+f1.countFamily());
+        f1.deleteChild(2);
         System.out.println(f1+" count "+f1.countFamily());
         System.out.printf("\n%s",h5);
+        System.out.printf("\n%s",h3);
     }
 
 }

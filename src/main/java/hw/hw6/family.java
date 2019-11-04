@@ -16,6 +16,11 @@ public class family {
 
     }
 
+    family(ArrayList<human> children)
+    {
+        this.children=children;
+    }
+
     public human getMother() {return mother;}
     public human getFather() {return father;}
     public ArrayList<human> getChildren(){return children;}
@@ -27,6 +32,7 @@ public class family {
     public void setFamilypet(pet familypet){this.familypet = familypet;}
     public void addChild(human child){this.children.add(child);}
     public void deleteChild(human child){this.children.remove(child);}
+    public void deleteChild(int index){this.children.remove(index);}
     public int countFamily(){return 2+this.children.size();}
 
 
@@ -62,4 +68,13 @@ public class family {
 
     @Override
     public int hashCode(){return 1;}
+
+    @Override
+    // finalize method is called on object once
+    // before garbage collecting it
+    protected void finalize() throws Throwable
+    {
+        System.out.println("Garbage collector called to destroy unreachable family class");
+        System.out.println("Object garbage collected : " + this);
+    }
 }

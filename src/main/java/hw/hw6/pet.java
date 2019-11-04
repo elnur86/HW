@@ -31,4 +31,13 @@ public class pet {
     public String toString(){
         return String.format("%s %s %s",species, nickname, Arrays.toString(habit));
     }
+
+    @Override
+    // finalize method is called on object once
+    // before garbage collecting it
+    protected void finalize() throws Throwable
+    {
+        System.out.println("Garbage collector called to destroy unreachable pet class");
+        System.out.println("Object garbage collected : " + this);
+    }
 }
