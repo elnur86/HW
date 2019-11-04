@@ -1,15 +1,10 @@
 package hw.hw6;
 
-
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 
 import java.util.ArrayList;
-
-import static org.junit.Assert.*;
-
 
 public class familyTest
 {
@@ -18,6 +13,7 @@ public class familyTest
     human h1=new human("Tom","Lyn",1980,100);
     human h2=new human("Julia","Onail",1983,120);
     human h3;
+
     @Before
     public void before() {
         Family=new family(famTest);
@@ -39,11 +35,8 @@ public class familyTest
         Assert.assertEquals(1,famTest.size());
     }
 
-/*    @Test
-    public void testDeleteChild() {
-    }
-
     @Test
     public void countFamily() {
-    }*/
+    Assert.assertEquals(4,2+famTest.size());
+    }
 }
