@@ -1,17 +1,16 @@
 package hw.hw7;
 
-public class human
-{
+public class Man extends Human {
     private String name;
     private String surname;
     private int year;
     private int iq;
-    private human mother;
-    private human father;
-    private hw.hw7.family family;
+    private Woman mother;
+    private Man father;
+    private hw.hw6.family family;
     private Day day;
 
-    human(String name, String surname, int year,int iq)
+    Man(String name, String surname, int year,int iq)
     {
         this.name=name;
         this.surname=surname;
@@ -19,7 +18,7 @@ public class human
         this.iq=iq;
     }
 
-    human(String name, String surname, int year, int iq, human mother, human father, Day day)
+    Man(String name, String surname, int year, int iq, Man father, Woman mother, Day day)
     {
         this.name=name;
         this.surname=surname;
@@ -43,15 +42,15 @@ public class human
     public boolean equals (Object that)
     {
         if(that==null) return false;
-        if(!(that instanceof human)) return false;
+        if(!(that instanceof Man)) return false;
         if(this==that) return true;
 
-        human thathuman = (human) that;
+        Man thatMan = (Man) that;
 
-                if (this.name.equals(((human) that).name)&&
-                    this.surname.equals(((human) that).surname))
-                {return true;}
-                else {return false;}
+        if (this.name.equals(((Man) that).name)&&
+                this.surname.equals(((Man) that).surname))
+        {return true;}
+        else {return false;}
     }
     @Override
     public int hashCode(){return 1;}
@@ -65,4 +64,14 @@ public class human
         System.out.println("Object garbage collected : " + this);
     }
 
+
+
+    @Override
+    void greetPet() {
+        System.out.println("Hello");
+
+    }
+void repairCar(){
+    System.out.println("I like to repair car myself");
+}
 }

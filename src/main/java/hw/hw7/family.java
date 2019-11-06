@@ -1,45 +1,46 @@
 package hw.hw7;
 
+import java.lang.management.ManagementFactory;
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class family {
-    private human mother;
-    private human father;
-    private ArrayList<human> children = new ArrayList<>();
+    private Woman mother;
+    private Man father;
+    private ArrayList<Man> children = new ArrayList<>();
     private pet familypet;
 
-    family(human father, human mother)
+    family(Man father, Woman mother)
     {
         this.mother=mother;
         this.father=father;
 
     }
 
-    family(ArrayList<human> children)
+    family(ArrayList<Man> children)
     {
         this.children=children;
     }
 
-    public human getMother() {return mother;}
-    public human getFather() {return father;}
-    public ArrayList<human> getChildren(){return children;}
+    public Woman getMother() {return mother;}
+    public Man getFather() {return father;}
+    public ArrayList<Man> getChildren(){return children;}
     public pet getFamilypet(){return familypet;}
 
-    public void setMother(human mother){this.mother = mother;}
-    public void setFather(human father){this.father = father;}
-    public void setChildren(ArrayList<human> children){this.children = children;}
+    public void setMother(Woman mother){this.mother = mother;}
+    public void setFather(Man father){this.father = father;}
+    public void setChildren(ArrayList<Man> children){this.children = children;}
     public void setFamilypet(pet familypet){this.familypet = familypet;}
-    public void addChild(human child){this.children.add(child);}
-    public void deleteChild(human child){this.children.remove(child);}
+    public void addChild(Man child){this.children.add(child);}
+    public void deleteChild(Man child){this.children.remove(child);}
     public void deleteChild(int index){this.children.remove(index);}
     public int countFamily(){return 2+this.children.size();}
 
 
-    public human[] ArrayListToArray (ArrayList<human> humArl)
+    public Man[] ArrayListToArray (ArrayList<Man> humArl)
     {
         int size=humArl.size();
-        human humAr[]= new human[size];
+        Man humAr[]= new Man[size];
         for (int i=0;i<humArl.size();i++)
             humAr[i] = humArl.get(i);
         return humAr;
