@@ -7,7 +7,6 @@ public class RobotCat extends pet{
     private String  nickname;
     private int age;
     private int tricklevel;
-    private String[] habit = new String[]{"eat", "drink", "sleep"};
 
 
 
@@ -25,7 +24,8 @@ public class RobotCat extends pet{
     void respond() {System.out.printf("Hello, owner. I am - %s. I miss you!",this.nickname);
 
     }
+    @Override
     public String toString(){
-        return String.format("%s %s",nickname, Arrays.toString(habit));
+        return String.format("%s",nickname);
     }
 }

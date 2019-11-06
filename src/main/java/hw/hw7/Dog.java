@@ -30,7 +30,8 @@ public class Dog extends pet {
     }
 
     void foul(){System.out.println("I foul");}
+    @Override
     public String toString(){
-        return String.format("%s %s",nickname, Arrays.toString(habit));
+        return String.format("%s can %s",nickname, Arrays.toString(habit));
     }
 }
