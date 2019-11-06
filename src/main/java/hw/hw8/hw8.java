@@ -9,6 +9,7 @@ public class hw8 {
         pet p1,p2;
 
         p1 = new Dog("Rex", 3, 64);
+        p2= new DomesticCat("Jerry",5,99);
         h1=new Man("Tom","Lyn",1980,100);
         h2=new Woman("Julia","Onail",1983,120);
         h3=new Man("Mike","Tot",1990,80);
@@ -17,6 +18,7 @@ public class hw8 {
 
         f1= new family(h1,h2);
         f1.setFamilypet(p1);
+        f1.setFamilypet(p2);
 
         System.out.println(f1+" count "+f1.countFamily());
         f1.addChild(h3);

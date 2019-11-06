@@ -2,12 +2,14 @@ package hw.hw8;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 public class family {
     private Woman mother;
     private Man father;
     private ArrayList<Man> children = new ArrayList<>();
-    private pet familypet;
+    private Set<pet> familypet= new HashSet<pet>();
 
     family(Man father, Woman mother)
     {
@@ -24,12 +26,12 @@ public class family {
     public Woman getMother() {return mother;}
     public Man getFather() {return father;}
     public ArrayList<Man> getChildren(){return children;}
-    public pet getFamilypet(){return familypet;}
+    public Set<pet> getFamilypet(){return familypet;}
 
     public void setMother(Woman mother){this.mother = mother;}
     public void setFather(Man father){this.father = father;}
     public void setChildren(ArrayList<Man> children){this.children = children;}
-    public void setFamilypet(pet familypet){this.familypet = familypet;}
+    public void setFamilypet(pet pet1){this.familypet.add(pet1);}
     public void addChild(Man child){this.children.add(child);}
     public void deleteChild(Man child){this.children.remove(child);}
     public void deleteChild(int index){this.children.remove(index);}

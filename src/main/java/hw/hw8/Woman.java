@@ -1,5 +1,8 @@
 package hw.hw8;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Woman extends Human {
 
     private String name;
@@ -9,7 +12,7 @@ public class Woman extends Human {
     private Woman mother;
     private Man father;
     private hw.hw6.family family;
-    private Day day;
+    private Map<String,String> day=new HashMap<>();
 
     Woman(String name, String surname, int year,int iq)
     {
@@ -19,7 +22,7 @@ public class Woman extends Human {
         this.iq=iq;
     }
 
-    Woman(String name, String surname, int year, int iq, Man father, Woman mother, Day day)
+    Woman(String name, String surname, int year, int iq, Man father, Woman mother)
     {
         this.name=name;
         this.surname=surname;
@@ -27,7 +30,13 @@ public class Woman extends Human {
         this.iq=iq;
         this.mother=mother;
         this.father=father;
-        this.day=day;
+        this.day.put("Monday","Get ready for the classes on Tuesday\n");
+        this.day.put("Tuesday","Java classes today\n");
+        this.day.put("Wednesday","Get ready for the classes on Thursday\n");
+        this.day.put("Thursday","Java classes today\n");
+        this.day.put("Friday","Get ready for the classes on Saturday\n");
+        this.day.put("Saturday","Java classes today\n");
+        this.day.put("Sunday","Relax, but not too much. Java is waiting for you\n");
     }
 
     public String getName() {
