@@ -1,5 +1,6 @@
 package hw.step.service;
 
+import hw.step.Console;
 import hw.step.dao.DAO;
 import hw.step.entity.City;
 import hw.step.entity.TimetableLine;
@@ -25,16 +26,17 @@ public class Service implements DAO<TimetableLine> {
             ttlStr.add(line);
         }
         br.close();
-        String[] linettl = new String[3];
+        String[] linettl = new String[4];
 
         for (String s: ttlStr)
         {
             linettl=s.split(" ");
 
-            City C1= new City(linettl[0]);
-            int time = Integer.parseInt(linettl[1]);
-            City C2 =new City(linettl[2]);
-            TimetableLine ttlLongLine= new TimetableLine(C1,time,C2);
+            String flightNumber = linettl[0];
+            City C1= new City(linettl[1]);
+            int time = Integer.parseInt(linettl[2]);
+            City C2 =new City(linettl[3]);
+            TimetableLine ttlLongLine= new TimetableLine(flightNumber, C1,time,C2);
             ttlarl.add(ttlLongLine);
         }
 
@@ -47,11 +49,19 @@ public class Service implements DAO<TimetableLine> {
     }
 
     @Override
-    public void put(TimetableLine timetableLine) {
-
+    public void put(TimetableLine myBooking) throws IOException {
+        BufferedWriter bw = new BufferedWriter(
+                new FileWriter(
+                        new File("src/main/java/hw/step/data/mybookings.txt")));
+        // -------------
+        bw.write(myBooking.toString());
+        bw.newLine();
+        bw.close();
     }
 
-    @Override
+
+
+            @Override
     public void delete(int id) {
 
     }

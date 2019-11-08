@@ -10,14 +10,12 @@ import java.util.ArrayList;
 
 public class TimetableController {
 
-  Console console;
-  DAO<TimetableLine> DAOTTL =new Service();
+DAO<TimetableLine> DAOTTL =new Service();
 
   public void show() throws IOException {
 
-    ArrayList<TimetableLine> ttlArrL = new ArrayList<>();
+    ArrayList<TimetableLine> ttlArrL = new ArrayList<>(DAOTTL.getAll());
 
-    ttlArrL.addAll(DAOTTL.getAll());
     for(TimetableLine s: ttlArrL)
       System.out.println(s);
 

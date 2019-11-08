@@ -1,11 +1,13 @@
 package hw.step.entity;
 
 public class TimetableLine {
+  private final String flightNumber;
   private final City src;
   private final int time;
   private final City dst;
 
-  public TimetableLine(City src, int time, City dst) {
+  public TimetableLine(String flightNumber, City src, int time, City dst) {
+    this.flightNumber=flightNumber;
     this.src = src;
     this.dst = dst;
     this.time = time;
@@ -23,13 +25,12 @@ public class TimetableLine {
     return time;
   }
 
+  public String getFlightNumber(){return flightNumber;}
+
   @Override
   public String toString() {
-    return "TimetableLine{" +
-        "src=" + src +
-        ", time=" + time +
-        ", dst=" + dst +
-        '}';
+    return String.format("%-20s%-20s%-20d%s",flightNumber,src,time,dst);
+//    "TimetableLine{" +"src=" + src +", time=" + time +", dst=" + dst +'}';
   }
 
   @Override

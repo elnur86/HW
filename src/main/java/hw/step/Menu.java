@@ -10,8 +10,8 @@ public class Menu {
     sb.append("| 1. Show timetable    |\n");
     sb.append("| 2. Make a booking    |\n");
     sb.append("| 3. Show my bookings  |\n");
-    sb.append("| 3. Cancel my booking |\n");
-    sb.append("| 4. Exit              |\n");
+    sb.append("| 4. Cancel my booking |\n");
+    sb.append("| 5. Exit              |\n");
     sb.append("========================\n");
     return sb.toString();
   }

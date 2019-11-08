@@ -7,6 +7,6 @@ import java.util.List;
 public interface DAO<T> {
   T get(int id) throws IOException;
   List<T> getAll() throws IOException;
-  void put(T t);
+  void put(T object) throws IOException;
   void delete(int id);
 }
