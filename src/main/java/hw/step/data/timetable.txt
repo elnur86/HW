@@ -1,0 +1,16 @@
+Moscow 1500 Baku
+Baku 0100 Baku
+Kiev 1200 Baku
+Minsk 0200 Baku
+Tbilisi 1300 Baku
+Istanbul 0300 Baku
+Berlin 1400 Baku
+Paris 0400 Baku
+Rome 1500 Baku
+London 0500 Baku
+Amsterdam 1600 Baku
+Copenhagen 0600 Baku
+Madrid 1700 Baku
+Lisbon 0700 Baku
+Oslo 1800 Baku
+Helsinki 0800 Baku
