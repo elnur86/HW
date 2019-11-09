@@ -52,7 +52,12 @@ DAO<TimetableLine> DAOTTL =new Service();
 
   }
 
-  public void show() {
+  public void show() throws IOException {
+
+      ArrayList<TimetableLine> ttlMyBooking = new ArrayList<>(DAOTTL.get(1));
+
+      for(TimetableLine s: ttlMyBooking)
+          System.out.println(s);
 
   }
 }

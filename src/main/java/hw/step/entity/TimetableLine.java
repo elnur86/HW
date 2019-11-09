@@ -36,6 +36,11 @@ public class TimetableLine {
 //    "TimetableLine{" +"src=" + src +", time=" + time +", dst=" + dst +'}';
   }
 
+    public String toString1() {
+        return String.format("%s %s %d %s",flightNumber,src,time,dst);
+//    "TimetableLine{" +"src=" + src +", time=" + time +", dst=" + dst +'}';
+    }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;
