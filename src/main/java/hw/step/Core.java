@@ -28,7 +28,7 @@ public class Core {
     this.mainController = new MainController();
   }
 
-  public void run() throws IOException {
+  public void run() throws Exception {
     if (!database.isExisted()) {
       database.createInitialData();
     }
@@ -55,7 +55,7 @@ public class Core {
           cont = false;
           break;
         case HELP:
-        default:
+        //default:
           console.printLn(mainController.help());
           break;
       }

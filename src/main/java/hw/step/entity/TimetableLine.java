@@ -1,10 +1,10 @@
 package hw.step.entity;
 
 public class TimetableLine {
-  private final String flightNumber;
-  private final City src;
-  private final int time;
-  private final City dst;
+  private  String flightNumber;
+  private  City src;
+  private  int time;
+  private  City dst;
 
   public TimetableLine(String flightNumber, City src, int time, City dst) {
     this.flightNumber=flightNumber;
@@ -12,6 +12,9 @@ public class TimetableLine {
     this.dst = dst;
     this.time = time;
   }
+
+ public TimetableLine()
+ {}
 
   public City getSrc() {
     return src;

@@ -2,33 +2,53 @@ package hw.step.controller;
 
 import hw.step.Console;
 import hw.step.Database;
+import hw.step.SystemConsole;
 import hw.step.dao.DAO;
 import hw.step.entity.TimetableLine;
 import hw.step.service.Service;
 
 import java.io.IOException;
+import java.sql.SQLOutput;
 import java.util.ArrayList;
+import java.util.List;
 
 public class BookingController {
 DAO<TimetableLine> DAOTTL =new Service();
 
-  public void add() throws IOException {
+  public void add() throws Exception {
 
-      ArrayList<TimetableLine> TTL=new ArrayList<>(DAOTTL.getAll());
-      Console console=null;
-      console.printLn("Please insert flight number: ");
+      TimetableLine addLine;
+      Console console = new SystemConsole();
+      console.printLn ("Please insert flight number: ");
       String fltnumber= console.readLn();
 
-      for (TimetableLine ttlCheck: TTL)
-          if (fltnumber.equals(ttlCheck.getFlightNumber()))
-              DAOTTL.put(ttlCheck);
-          else console.printLn("There is no such flight exist.\n Please try again");
-
-
+      addLine= getbyFlightNum(fltnumber);
+      DAOTTL.put(addLine);
 
   }
 
-  public void remove() {
+    public TimetableLine getbyFlightNum(String flightNumber) throws Exception {
+
+        List<TimetableLine> ttlList =new ArrayList<>();
+        ttlList=DAOTTL.getAll();
+        TimetableLine exactMatch = new TimetableLine();
+        int i=0;
+        for(TimetableLine ttlFlightNumber: ttlList)
+        {
+            if (flightNumber.equals(ttlFlightNumber.getFlightNumber()))
+                {
+                exactMatch = ttlFlightNumber;
+                i++;
+            }
+        }
+        if (i==0) {
+            System.out.println("There is no such a flight");
+            add();
+        }
+            return exactMatch;
+    }
+
+    public void remove() {
 
   }
 
