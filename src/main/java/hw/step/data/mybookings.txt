@@ -1,1 +1,2 @@
-CB01 Copenhagen 600 Baku
+PB01 Paris 400 Baku
+AB01 Amsterdam 1600 Baku

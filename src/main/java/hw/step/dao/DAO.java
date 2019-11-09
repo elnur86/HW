@@ -8,5 +8,5 @@ public interface DAO<T> {
   List<T> get(int id) throws IOException;
   List<T> getAll() throws IOException;
   void put(T object) throws IOException;
-  void delete(int id);
+  void delete(int id, String Code) throws IOException;
 }

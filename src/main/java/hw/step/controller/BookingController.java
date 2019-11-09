@@ -48,7 +48,13 @@ DAO<TimetableLine> DAOTTL =new Service();
             return exactMatch;
     }
 
-    public void remove() {
+    public void remove() throws IOException {
+        TimetableLine removeLine;
+        Console console = new SystemConsole();
+        console.printLn ("Please insert flight number: ");
+        String fltnumber= console.readLn();
+
+        DAOTTL.delete(1,fltnumber);
 
   }
 

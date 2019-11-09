@@ -6,6 +6,7 @@ import hw.step.entity.TimetableLine;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class Service implements DAO<TimetableLine> {
@@ -13,62 +14,13 @@ public class Service implements DAO<TimetableLine> {
     @Override
     public List<TimetableLine> getAll() throws IOException {
 
-
-        ArrayList<String> ttlStr = new ArrayList<>();
-        ArrayList<TimetableLine> ttlarl = new ArrayList<>();
-        BufferedReader br = new BufferedReader(new FileReader(new File("src/main/java/hw/step/data/timetable.txt")));
-        String line;
-        while (true) {
-            line = br.readLine();
-            if (line == null) break;
-            ttlStr.add(line);
-        }
-        br.close();
-        String[] linettl = new String[4];
-
-        for (String s: ttlStr)
-        {
-            linettl=s.split(" ");
-
-            String flightNumber = linettl[0];
-            City C1= new City(linettl[1]);
-            int time = Integer.parseInt(linettl[2]);
-            City C2 =new City(linettl[3]);
-            TimetableLine ttlLongLine= new TimetableLine(flightNumber, C1,time,C2);
-            ttlarl.add(ttlLongLine);
-        }
-
-        return ttlarl;
+        return readFromFile("src/main/java/hw/step/data/timetable.txt");
     }
 
     @Override
     public List<TimetableLine> get(int id) throws IOException {
 
-        ArrayList<String> ttlStr = new ArrayList<>();
-        ArrayList<TimetableLine> ttlarl = new ArrayList<>();
-        BufferedReader br = new BufferedReader(new FileReader(new File("src/main/java/hw/step/data/mybookings.txt")));
-        String line;
-        while (true) {
-            line = br.readLine();
-            if (line == null) break;
-            ttlStr.add(line);
-        }
-        br.close();
-        String[] linettl = new String[4];
-
-        for (String s: ttlStr)
-        {
-            linettl=s.split(" ");
-
-            String flightNumber = linettl[0];
-            City C1= new City(linettl[1]);
-            int time = Integer.parseInt(linettl[2]);
-            City C2 =new City(linettl[3]);
-            TimetableLine ttlLongLine= new TimetableLine(flightNumber, C1,time,C2);
-            ttlarl.add(ttlLongLine);
-        }
-
-        return ttlarl;
+        return readFromFile("src/main/java/hw/step/data/mybookings.txt");
     }
 
     @Override
@@ -85,13 +37,54 @@ public class Service implements DAO<TimetableLine> {
 
 
             @Override
-    public void delete(int id) {
+    public void delete(int id, String Code) throws IOException
+            {
+            ArrayList<TimetableLine> deleteBooking = new ArrayList<>();
+            deleteBooking=readFromFile("src/main/java/hw/step/data/mybookings.txt");
 
 
+            BufferedWriter bw = new BufferedWriter(
+                new FileWriter(
+                      new File("src/main/java/hw/step/data/mybookings.txt")));
 
+                for (TimetableLine itr: deleteBooking)
+                    if(!itr.getFlightNumber().equals(Code)) {
+                        bw.write(itr.toString1());
+                        bw.newLine();
+                    }
+
+                bw.close();
 
     }
 
+    public ArrayList<TimetableLine> readFromFile (String path) throws IOException
+    {
+        ArrayList<String> ttlStr = new ArrayList<>();
+        ArrayList<TimetableLine> ttlarl = new ArrayList<>();
+        BufferedReader br = new BufferedReader(new FileReader(new File(path)));
+        String line;
+        while (true) {
+            line = br.readLine();
+            if (line == null) break;
+            ttlStr.add(line);
+        }
+        br.close();
+        String[] linettl = new String[4];
 
+        for (String s: ttlStr)
+        {
+            linettl=s.split(" ");
+
+            String flightNumber = linettl[0];
+            City C1= new City(linettl[1]);
+            int time = Integer.parseInt(linettl[2]);
+            City C2 =new City(linettl[3]);
+            TimetableLine ttlLongLine= new TimetableLine(flightNumber, C1,time,C2);
+            ttlarl.add(ttlLongLine);
+        }
+
+        return ttlarl;
+
+    }
 
 }
