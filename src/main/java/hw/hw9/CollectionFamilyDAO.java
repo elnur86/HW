@@ -7,7 +7,7 @@ import java.util.List;
 
 public class CollectionFamilyDAO implements FamilyDAO<family> {
 
-    List<family> fm;
+    public static List<family> fm;
 
     @Override
     public List<family> getAllFamilies(List<family> origin) {

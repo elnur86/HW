@@ -5,6 +5,7 @@ import hw.hw9.entitiy.Man;
 import hw.hw9.entitiy.Woman;
 import hw.hw9.entitiy.family;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class FamilyService {
@@ -27,14 +28,14 @@ public void displayAllFamilies() {
 }
 
 public List<family> getFamiliesBiggerThan(int count){
-    List<family> biggerThan=null;
+    List<family> biggerThan=new ArrayList<>();
     for(family eachFamily: fam)
         if (familyCount(eachFamily)>count) biggerThan.add(eachFamily);
     return biggerThan;
 }
 
 public List<family> getFamiliesLessThan (int count){
-    List<family> lessThan=null;
+    List<family> lessThan=new ArrayList<>();
     for(family eachFamily:fam)
         if(familyCount(eachFamily)<count) lessThan.add(eachFamily);
     return lessThan;
@@ -51,6 +52,7 @@ public void createNewFamily(Man father, Woman mother){
     int index=fam.size();
     index++;
     family newFamily= new family(index,father,mother);
+    fam.add(newFamily);
 }
 
 public void deleteFamilyByIndex(int index){
@@ -72,8 +74,8 @@ public void adoptChild(family family, Man child){
 
 public void deleteAllChildrenOlderThan(int age){
     for(family eachFamily: fam)
-        for(Man eachChild: eachFamily.getChildren())
-            if (eachChild.getAge()>age) eachFamily.getChildren().remove(eachChild);
+        for(int i=0;i<eachFamily.getChildren().size();i++)
+            if (eachFamily.getChildren().get(i).getAge()>age) eachFamily.getChildren().remove(i);
 }
 
 public int count (){

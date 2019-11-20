@@ -27,7 +27,7 @@ public class Main {
 
         Man ch1=new Man("Pirt","Lyn",2010,50);
         Man ch2=new Man("Zirt","Mammed",2012,50);
-        Man ch3=new Man("Mirt","Coni",2015,50);
+        Man ch3=new Man("Mirt","Fox",2000,50);
 
         family f1= new family(1,m1,w1);
         family f2= new family(2,m2,w2);
@@ -44,7 +44,19 @@ public class Main {
         fmCtrl.brnChld(f1,"Tom","Julia");
         fmCtrl.disAllFm();
         fmCtrl.adptChld(f1,ch1);
+        fmCtrl.adptChld(f3,ch3);
         fmCtrl.disAllFm();
+        System.out.println(fmCtrl.getFmsBigThan(3));
+        System.out.println(fmCtrl.getFmsLessThan(3));
+        System.out.println(fmCtrl.cntFmsWithMbrNum(2));
+        fmCtrl.crtNewFm(m4,w4);
+        fmCtrl.disAllFm();
+        fmCtrl.dltFmById(3); //do not react?
+        fmCtrl.disAllFm();
+        fmCtrl.dltAllChldOldThan(16);
+        fmCtrl.disAllFm();
+        System.out.println(fmCtrl.fmCount());
+        System.out.println(fmCtrl.getFmById(1));
 
     }
 }
