@@ -1,5 +1,6 @@
 package hw.hw4;
 
+
 public class Human {
 
     String name;

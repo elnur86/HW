@@ -18,8 +18,8 @@ public int familyCount (family fmCount){
     return 2+fmCount.getChildren().size();
 }
 
-public void getAllFamilies(){
-    fam=DAOFM.getAllFamilies();
+public void getAllFamilies(List<family> getAllFamilies){
+    fam=DAOFM.getAllFamilies(getAllFamilies);
 }
 
 public void displayAllFamilies() {
@@ -39,6 +39,7 @@ public List<family> getFamiliesLessThan (int count){
         if(familyCount(eachFamily)<count) lessThan.add(eachFamily);
     return lessThan;
 }
+
 public int countFamiliesWithMemberNumber (int count) {
     int familiesWithNumber=0;
     for (family eachFamily : fam)
@@ -56,7 +57,34 @@ public void deleteFamilyByIndex(int index){
     DAOFM.deleteFamily(index);
 }
 
+public void bornChild(family family, String father, String mother){
+    for(family eachFamily: fam)
+        if( eachFamily.getFather().getName().equals(father) &&
+            eachFamily.getMother().getName().equals(mother))
+            eachFamily.getChildren().add(new Man("NewBorn",eachFamily.getFather().getSurname(),2019,120));
+}
 
+public void adoptChild(family family, Man child){
+    for(family eachFamily: fam)
+        if(eachFamily.equals(family))eachFamily.getChildren().add(child);
 
+}
+
+public void deleteAllChildrenOlderThan(int age){
+    for(family eachFamily: fam)
+        for(Man eachChild: eachFamily.getChildren())
+            if (eachChild.getAge()>age) eachFamily.getChildren().remove(eachChild);
+}
+
+public int count (){
+    return fam.size();
+}
+
+public family getFamilyById(int index){
+    family familyLookingFor=null;
+    for(family eachFamily: fam)
+        if(eachFamily.getIndex()==index) familyLookingFor=eachFamily;
+    return familyLookingFor;
+}
 
 }

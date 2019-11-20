@@ -13,7 +13,7 @@ public class Man extends Human {
     private hw.hw6.family family;
     private Map<String,String> day = new HashMap<String,String >();
 
-    Man(String name, String surname, int year,int iq)
+    public Man(String name, String surname, int year, int iq)
     {
         this.name=name;
         this.surname=surname;
@@ -41,10 +41,13 @@ public class Man extends Human {
     public String getName() {
         return name;
     }
-
+    public String getSurname() {
+        return surname;
+    }
+    public int getAge(){return 2019-this.year;}
     public String toString()
     {
-        return String.format("%s %s year of birth %d %s",name,surname,year, day);
+        return String.format("%s %s year of birth %d",name,surname,year);
     }
 
     @Override

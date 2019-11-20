@@ -30,6 +30,7 @@ public class family {
     public Man getFather() {return father;}
     public ArrayList<Man> getChildren(){return children;}
     public Set<pet> getFamilypet(){return familypet;}
+    public int getIndex(){return this.index;}
 
     public void setMother(Woman mother){this.mother = mother;}
     public void setFather(Man father){this.father = father;}
@@ -50,10 +51,11 @@ public class family {
         return humAr;
     }
 
+
     public String toString()
     {
 
-        return String.format("Index:%d | Father:%s | Mother:%s | Children:%s | Pet: %s",index,father,mother,Arrays.toString(ArrayListToArray(children)), familypet);
+        return String.format("Index:%d | Father:%s | Mother:%s | Children:%s\n",index,father,mother,Arrays.toString(ArrayListToArray(children)));
     }
 
     @Override

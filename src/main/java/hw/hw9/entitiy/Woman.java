@@ -14,7 +14,7 @@ public class Woman extends Human {
     private hw.hw6.family family;
     private Map<String,String> day=new HashMap<>();
 
-    Woman(String name, String surname, int year,int iq)
+    public Woman(String name, String surname, int year, int iq)
     {
         this.name=name;
         this.surname=surname;
@@ -45,7 +45,7 @@ public class Woman extends Human {
 
     public String toString()
     {
-        return String.format("%s %s year of birth %d %s",name,surname,year, day);
+        return String.format("%s %s year of birth %d",name,surname,year);
     }
 
     @Override

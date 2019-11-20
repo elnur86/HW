@@ -10,7 +10,8 @@ public class CollectionFamilyDAO implements FamilyDAO<family> {
     List<family> fm;
 
     @Override
-    public List getAllFamilies() {
+    public List<family> getAllFamilies(List<family> origin) {
+        fm=origin;
         return fm;
     }
 
