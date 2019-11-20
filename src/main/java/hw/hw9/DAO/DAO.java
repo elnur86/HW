@@ -1,4 +1,4 @@
-package hw.hw9;
+package hw.hw9.DAO;
 
 import java.util.List;
 
